@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Otpornici</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/x-icon" href="/img/icons/favicon.ico">
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html">
+      <img class="logo-mobile" src="img/logo-mobile.png" alt="logo">
+      <img class="logo-desktop" src="img/logo-desktop.png" alt="logo">
+    </a>
+    <nav>
+      <a href="dioda.html">Dioda</a>
+      <a href="opamp.html">OpAmp</a>
+      <a href="logicka-kola.html">Logička kola</a>
+    </nav>
+  </header>
+
+  <div class="layout">
+
+    <input type="checkbox" id="sidebar-toggle">
+    <aside class="sidebar">
+      <a href="#osnovna">Osnovna funkcija</a>
+      <a href="#vrste-otpornika">Vrste otpornika</a>
+      <a href="#ohm">Ohmov zakon</a>
+      <a href="#potenciometar">Potenciometri</a>
+      <a href="#djelitelj">Djelitelj napona</a>
+      <a href="#fotootpornik">Fotootpornik (LDR)</a>
+      <a href="#mjerenja">Mjerenja i praktični primjeri</a>
+      <a href="#model">Modeli i tačnost</a>
+      <a href="#zakljucak">Zaključak</a>
+    </aside>
+
+    <label for="sidebar-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <main>
+      <h1>Otpornici</h1>
+
+      <h2 id="osnovna">Osnovna funkcija</h2>
+      <p>
+        <strong>Otpornik</strong> je pasivna elektronička komponenta koja ograničava protok električne struje u krugu i pretvara električnu energiju u toplotu. 
+        Njegova osnovna uloga je da postavi ograničenje struje, podijeli napon ili stvori stabilan referentni otpor u različitim dijelovima kola. 
+        Otpornici se koriste u sklopovima za podešavanje radnih tačaka aktivnih komponenti, u djeliteljima napona, u filterima, u grijaćim elementima i za mjerenja. 
+        Vrijednost otpornosti izražava se u omima (Ω) i definira odnos napona i struje preko Ohmovog zakona.
+      </p>
+
+      <div class="img-container">
+        <img src="img/otpornik/resistor-symbols.png">
+      </div>
+
+      <h2 id="vrste-otpornika">Vrste otpornika</h2>
+      <p>
+        Postoji mnogo tipova otpornika, svaki s određenim svojstvima i primjenama. Najčešće vrste su:
+      </p>
+
+      <ul>
+        <li><strong>Ugljični (carbon-film) otpornici</strong> – jednostavni i jeftini, široko korišteni u niskobudžetnim aplikacijama.</li>
+        <li><strong>Metal-film</strong> – precizniji, manji temperaturni koeficijent, bolja stabilnost i manji šum.</li>
+        <li><strong>Metal-oksid</strong> – dobra otpornost na toplinske udare i višu disipaciju snage.</li>
+        <li><strong>Vrvičasti (wirewound)</strong> – veliki snžni otpornici za napajanja, precizni i snažni.</li>
+        <li><strong>SMD otpornici</strong> – površinski montažni, za moderne ploče i visoke frekvencije.</li>
+        <li><strong>Promjenjivi otpornici</strong> – potenciometri, trimeri i regolatori za podešavanje.</li>
+        <li><strong>Specijalni senzori</strong> – termistori (NTC/PTC), fotootpornici (LDR), varistori (OV zaštita) i dr.</li>
+      </ul>
+
+      <div class="img-container">
+        <img src="img/otpornik/resistor-types.png">
+      </div>
+
+      <h2 id="ohm">Ohmov zakon</h2>
+      <p>
+        Ohmov zakon povezuje napon <em>U</em>, struju <em>I</em> i otpor <em>R</em> formulom:
+      </p>
+      <div class="formula">
+        <span class="fraction">
+          <span class="numerator">U</span>
+          <span class="denominator">I</span>
+        </span> = R
+      </div>
+      <p>
+        Iz toga slijedi praktične forme za računanje:
+      </p>
+      <div class="formula">
+        I = <span class="fraction"><span class="numerator">U</span><span class="denominator">R</span></span>
+      </div>
+      <div class="formula">
+        U = I · R
+      </div>
+      <p>Ovo su ključne formule za projektovanje otpornika u seriji i paraleli, za odabir snage i proračun disipacije (P = U·I = I²·R = U²/R).</p>
+
+      <h2 id="potenciometar">Potenciometri</h2>
+      <p>
+        <strong>Potenciometar</strong> je varijabilni otpornik s tri priključka koji služi kao podešavajući element u krugu. 
+        Centralni priključak (klizač) pomiče se duž otpornog elementa i dijeli ukupan otpor u dva dijela. 
+        Potenciometri se koriste za podešavanje glasnoće, kontrasta, intenziteta svjetla, i u analognim sklopovima za finu regulaciju napona i struje.
+      </p>
+      <p>
+        Ako je ukupni otpor potenciometra R<sub>tot</sub> i klizač podijeli na R<sub>1</sub> i R<sub>2</sub>, tada je:
+      </p>
+      <div class="formula">
+        U<sub>izl</sub> = U<sub>ul</sub> · <span class="fraction">
+          <span class="numerator">R<sub>2</sub></span>
+          <span class="denominator">R<sub>1</sub> + R<sub>2</sub></span>
+        </span>
+      </div>
+      <p>
+        Potenciometar može raditi kao podesivi djelitelj napona (kada su sva tri priključka korištena) ili kao varijabilni otpornik (kada je jedan kraj i klizač korišteni). Bitno je odabrati snagu i tip kliznog mehanizma (linearni ili logaritamski) prema aplikaciji.
+      </p>
+
+      <div class="img-container">
+        <img src="img/otpornik/potentiometer.png">
+      </div>
+
+      <h2 id="djelitelj">Djelitelj napona</h2>
+      <p>
+        Djelitelj napona je jednostavna i često korištena shema gdje se dva otpornika povežu u seriju između izvora napajanja i mase. 
+        Napon na spoju otpornika (U<sub>izl</sub>) je frakcija izvornog napona (U<sub>ul</sub>) i definira se omjerom vrijednosti otpornika.
+      </p>
+      <div class="formula">
+        U<sub>izl</sub> = U<sub>ul</sub> · <span class="fraction">
+          <span class="numerator">R<sub>B</sub></span>
+          <span class="denominator">R<sub>A</sub> + R<sub>B</sub></span>
+        </span>
+      </div>
+      <p>
+        Djelitelji su korisni za dobivanje referentnog napona, podešavanje signala za ADC ulaze mikrokontrolera ili za upravljačke napone baza tranzistora. Treba paziti na opterećenje — ako se na izlaz priključi uređaj s malim ulaznim otporom, to mijenja vrijednosti djelitelja pa je često potrebno koristiti sljednik napona (buffer) ili birati manje vrijednosti otpornika.
+      </p>
+
+      <div class="img-container">
+        <img src="img/otpornik/voltage-divider.png" alt="voltage-divider">
+      </div>
+
+      <h2 id="fotootpornik">Fotootpornik (LDR)</h2>
+
+      <p>
+        <strong>Fotootpornik</strong> je komponenta čiji se električni otpor mijenja pod djelovanjem svjetlosti — porastom intenziteta svjetlosti njegova vrijednost opada. U literaturi se često koristi kratica LDR (Light Dependent Resistor).
+      </p>
+
+      <p>
+        Izrađuju se od poluprovodničkih materijala (tradicionalno kadmijev sulfid – CdS, ali postoje i alternativni materijali zbog ograničenja kadmija). Aktivni sloj obično je položen u vijugastom obliku na keramičkoj podlozi kako bi se povećala izložena površina i time osjetljivost.
+      </p>
+
+      <div class="img-container">
+        <img src="img/otpornik/photoresistor-construction.png">
+        <img src="img/otpornik/photoresistor-housing.png">
+      </div>
+
+      <p>
+        Pri osvjetljavanju fotona, fotoni prenose energiju valentnim elektronima u materijalu, stvarajući parove elektron-šupljina. Broj nosilaca raste s intenzitetom svjetlosti, pa raste i provodljivost (otpor pada). U mraku, LDR može imati vrijednosti u megaomima; pri jakom svjetlu otpor može pasti na stotine oma.
+      </p>
+
+      <p>
+        Fotootpornici se često koriste u uređajima za automatsko uključivanje/isključivanje svjetla, u mjeračima svjetlosti, zaštitnim sistemima i u sklopkama koje reagiraju na promjenu osvjetljenja. Tipična primjena je djelitelj napona gdje LDR jednom granom utiče na napon koji se dovodi na ulaz druge komponente (npr. baza tranzistora ili ADC mikrokontrolera).
+      </p>
+
+      <p>Primjer napona na bazi tranzistora u sklopu sa LDR-om kao jednom granom djelitelja:</p>
+
+      <div class="formula">
+        <br>
+        U<sub>BE</sub> = U<sub>CC</sub> · <span class="fraction">
+          <span class="numerator">R<sub>F</sub></span>
+          <span class="denominator">R<sub>F</sub> + R<sub>B</span>
+        </span>
+      </div>
+
+      <p>
+        Gdje je R<sub>F</sub> fotootpornik, a R<sub>B</sub> fiksni otpornik u djelitelju. Kako se R<sub>F</sub> smanjuje pri svjetlu, napon na bazi opada ili raste ovisno o topologiji (R<sub>F</sub> na gore ili dole). Tipično se LDR koristi tako da svjetlo smanjuje napon na bazi (ili povećava, ovisno o spoju), što direktno utiče na uključivanje tranzistora.
+      </p>
+
+      <div class="img-container">
+        <img src="img/otpornik/photoresistor-transistor.png" alt="photoresistor-transistor">
+      </div>
+
+      <p>
+        Postoje intrinzični i ekstrinzični LDR-ovi: intrinzični su od čistih materijala (niža osjetljivost), a ekstrinzični su dopirani za veću osjetljivost i širi spektar odgovora. U izboru LDR-a obratite pažnju na spektralnu osjetljivost (na koje talasne dužine su najosjetljiviji), raspon otpora i dinamiku odziva.
+      </p>
+
+      <h2 id="mjerenja">Mjerenja i praktični primjeri</h2>
+      <p>
+        U laboratoriju najčešće mjerimo otpore multimetrom u ohm režimu. Za preciznije mjerenje u krugu koristimo mostove ili mjerenje napona i struje preko poznatih otpornika. 
+        Primjer proračuna: imamo napajanje 9V i želimo preko djelitelja dobiti 3V; biramo R<sub>A</sub> i R<sub>B</sub> tako da:
+      </p>
+      <div class="formula">
+        3V = 9V · <span class="fraction">
+          <span class="numerator">R<sub>B</sub></span>
+          <span class="denominator">R<sub>A</sub> + R<sub>B</sub></span>
+        </span>
+      </div>
+      <p>
+        Odaberete R<sub>B</sub> i R<sub>A</sub> po standardnim vrijednostima otpornika tako da zadovolje omjer i snagu disipacije. Uvijek provjerite disipaciju snage P = U²/R ili I²R kod većih struja.
+      </p>
+
+      <h2 id="model">Modeli i tačnost</h2>
+      <p>
+        Idealni otpornik je linearni element, ali u stvarnosti postoje parasitne osobine: tolerancija (±1%, ±5%, ±10%), temperaturni koeficijent (ppm/°C), šum i parazitske induktivnosti/kapacitivnosti u SMD izvedbama. Pri radu na visokim frekvencijama biramo otpornike s malom induktivnošću (metal-film SMD), dok za velike snage koristimo wirewound tipove.
+      </p>
+
+      <h2 id="zakljucak">Zaključak</h2>
+      <p>
+        Otpornici su temeljni građevni blok elektronike: od jednostavnog ograničenja struje do ključnih elemenata u djeliteljima napona, senzorima i regulatorima. Fotootpornici (LDR) pružaju jednostavan i jeftin način detekcije svjetla u mnogo aplikacija, dok potenciometri i djelitelji napona omogućuju prilagodbu i kontrolu analognih signala. Razumijevanje vrsta otpornika, njihovih ograničenja i pravilno dimenzioniranje osigurava pouzdan rad sklopova i dugovječnost uređaja.
+      </p>
+
+    </main>
+  </div>
+
+  <footer>
+    <p>
+      &copy; 2025 - ShortCircuit Electronics | <a href="#">Nazad na vrh</a>
+    </p>
+  </footer>
+
+</body>
+</html>

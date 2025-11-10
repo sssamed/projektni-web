@@ -1,0 +1,221 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Logička Kola</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/x-icon" href="/img/icons/favicon.ico">
+</head>
+<body>
+  <header>
+    <a href="index.html">
+      <img class="logo-mobile" src="img/logo-mobile.png" alt="logo">
+      <img class="logo-desktop" src="img/logo-desktop.png" alt="logo">
+    </a>
+    <nav>
+      <a href="dioda.html">Dioda</a>
+      <a href="otpornik.html">Otpornici</a>
+      <a href="opamp.html">OpAmp</a>
+    </nav>
+  </header>
+
+  <div class="layout">
+
+    <input type="checkbox" id="sidebar-toggle">
+
+    <aside class="sidebar">
+      <a href="#uvod">Uvod</a>
+      <a href="#osnovne">Osnovni pojmovi</a>
+      <a href="#and">I (AND)</a>
+      <a href="#or">ILI (OR)</a>
+      <a href="#not">NE (NOT)</a>
+      <a href="#nand">NI (NAND)</a>
+      <a href="#nor">NILI (NOR)</a>
+      <a href="#xor">EKSKLUZIVNO ILI (XOR)</a>
+      <a href="#xnor">EKSKLUYIVNO NILI (XNOR)</a>
+      <a href="#zakljucak">Zaključak</a>
+    </aside>
+
+    <label for="sidebar-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <main>
+      <h1>Logička kola</h1>
+      <h2 id="uvod">Uvod</h2>
+      <p>
+        Logička kola predstavljaju osnovu digitalne elektronike. Oni rade na principu binarne logike,
+        gdje svaki signal može imati samo dvije vrijednosti: logičku nulu (0) ili logičku jedinicu (1).
+        Kombinovanjem osnovnih logičkih kola formiraju se složeniji digitalni sistemi poput procesora,
+        memorija, digitalnih regulatora i komunikacionih modula. Razumijevanje rada ovih kola je ključno 
+        za projektovanje digitalnih sklopova, optimizaciju elektronskih uređaja i razvoj složenih elektronskih sistema.
+      </p>
+
+      <h2 id="osnovne">Osnovni pojmovi</h2>
+      <p>
+        Logička kola se zasnivaju na Booleovoj algebri. Ulazni signali se kombinuju na način
+        definisan logičkim pravilima, a rezultat se pojavljuje na izlazu. Simboli i funkcije logičkih
+        kola su standardizovani kako bi se olakšalo projektovanje digitalnih šema. Osnovna logička kola
+        su: I (AND), ILI (OR), NE (NOT), NI (NAND), NILI (NOR), ekskluzivno ILI (XOR) i ekskluyivno NILI (XNOR).
+        Svako od ovih kola ima specifičnu primjenu u digitalnoj elektronici, a kombinovanjem 
+        više kola moguće je ostvariti složene funkcije i aritmetičke operacije.
+      </p>
+
+      <h3>Simbolički prikaz logičkih kola</h3>
+      <div class="img-container">
+        <img src="img/logicka-kola/logic-gates.png">
+      </div>
+
+      <h2 id="and">I (AND) kolo</h2>
+      <p>
+        I kolo je jedno od osnovnih logičkih kola u digitalnoj elektronici. Njegova funkcija se zasniva na 
+        principu množenja ulaznih logičkih vrijednosti: izlaz daje logičku jedinicu (1) samo kada su svi ulazi jednaki 1.
+        U suprotnom, izlaz je 0. Ovo kolo se koristi u svim digitalnim uređajima za kontrolu i uslovljavanje događaja.
+        Na primjer, ako želimo da određena akcija bude izvedena samo kada su dva uslova istovremeno zadovoljena, koristimo AND kolo.
+      </p>
+
+      <table>
+        <tr><th>A</th><th>B</th><th>Y = A · B</th></tr>
+        <tr><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>0</td><td>1</td><td>0</td></tr>
+        <tr><td>1</td><td>0</td><td>0</td></tr>
+        <tr><td>1</td><td>1</td><td>1</td></tr>
+      </table>
+
+      <div class="img-container">
+        <img src="img/logicka-kola/and.png">
+      </div>
+
+      <h2 id="or">ILI (OR) kolo</h2>
+      <p>
+        ILI kolo daje izlaz 1 ukoliko je bar jedan od njegovih ulaza 1. Izlaz je 0 
+        samo kada su svi ulazi 0. Ovo kolo se koristi kada je potrebno aktivirati neku funkciju 
+        čak i ako je ispunjen samo jedan od nekoliko uvjeta.
+        Na primjer, u alarmnim sistemima OR kolo može detektovati više senzora i aktivirati alarm ako je bilo koji od senzora aktiviran.
+      </p>
+
+      <table>
+        <tr><th>A</th><th>B</th><th>Y = A + B</th></tr>
+        <tr><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>0</td><td>1</td><td>1</td></tr>
+        <tr><td>1</td><td>0</td><td>1</td></tr>
+        <tr><td>1</td><td>1</td><td>1</td></tr>
+      </table>
+
+      <div class="img-container">
+        <img src="img/logicka-kola/or.png">
+      </div>
+
+      <h2 id="not">NE (NOT) kolo</h2>
+      <p>
+        NE kolo ili inverter je logičko kolo koje invertuje ulazni signal. Ako je ulaz 1, izlaz postaje 0 i obrnuto.
+        Ovo kolo je osnova za negiranje logičkih vrijednosti i koristi se u kombinaciji sa drugim logičkim kolima.
+        Primjena uključuje situacije kada je potrebno izvršiti akciju samo ako signal NIJE aktivan.
+      </p>
+
+      <table>
+        <tr><th>A</th><th>Y = ¬A</th></tr>
+        <tr><td>0</td><td>1</td></tr>
+        <tr><td>1</td><td>0</td></tr>
+      </table>
+
+      <div class="img-container">
+        <img src="img/logicka-kola/not.png">
+      </div>
+
+      <h2 id="NI (NAND)">NI (NAND) kolo</h2>
+      <p>
+        NI kolo je kombinacija I i NE kola. Njegov izlaz je suprotan AND kolu: izlaz je 0 samo kada su svi ulazi 1, a u svim drugim slučajevima izlaz je 1.
+        NI kolo je univerzalno kolo jer se pomoću njega mogu realizovati sva druga logička kola.
+        Primjena uključuje izradu memorijskih ćelija, flip-flopova i složenih logičkih funkcija u digitalnim uređajima.
+      </p>
+
+      <table>
+        <tr><th>A</th><th>B</th><th>Y = ¬(A · B)</th></tr>
+        <tr><td>0</td><td>0</td><td>1</td></tr>
+        <tr><td>0</td><td>1</td><td>1</td></tr>
+        <tr><td>1</td><td>0</td><td>1</td></tr>
+        <tr><td>1</td><td>1</td><td>0</td></tr>
+      </table>
+
+      <div class="img-container">
+        <img src="img/logicka-kola/nand.png">
+      </div>
+
+      <h2 id="nor">NILI (NOR) kolo</h2>
+      <p>
+        NILI kolo je kombinacija ILI i NE kola. Njegov izlaz je 1 samo kada su svi ulazi 0, a u svim drugim slučajevima izlaz je 0.
+        Kao i NI, NILI je univerzalno kolo i može se koristiti za izgradnju bilo koje logičke funkcije.
+        Primjena uključuje digitalne komparatore i različite kontrolne sisteme.
+      </p>
+
+      <table>
+        <tr><th>A</th><th>B</th><th>Y = ¬(A + B)</th></tr>
+        <tr><td>0</td><td>0</td><td>1</td></tr>
+        <tr><td>0</td><td>1</td><td>0</td></tr>
+        <tr><td>1</td><td>0</td><td>0</td></tr>
+        <tr><td>1</td><td>1</td><td>0</td></tr>
+      </table>
+
+      <div class="img-container">
+        <img src="img/logicka-kola/nor.png">
+      </div>
+
+      <h2 id="xor">EKSKLUZIVNO ILI (XOR) kolo</h2>
+      <p>
+        XOR kolo daje izlaz 1 samo kada su ulazi različiti. Ako su oba ulaza jednaka (0 i 0 ili 1 i 1), izlaz je 0.
+        Primjena XOR kola uključuje aritmetičke jedinice, sabirače, kriptografiju i digitalnu logiku.
+        Ovo kolo je ključno za detekciju neparnosti i poređenje binarnih vrijednosti.
+      </p>
+
+      <table>
+        <tr><th>A</th><th>B</th><th>Y = A ⊕ B</th></tr>
+        <tr><td>0</td><td>0</td><td>0</td></tr>
+        <tr><td>0</td><td>1</td><td>1</td></tr>
+        <tr><td>1</td><td>0</td><td>1</td></tr>
+        <tr><td>1</td><td>1</td><td>0</td></tr>
+      </table>
+
+      <div class="img-container">
+        <img src="img/logicka-kola/xor.png">
+      </div>
+
+      <h2 id="xnor">EKSKLUYIVNO NILI (XNOR) kolo</h2>
+      <p>
+        XNOR kolo daje izlaz 1 samo kada su ulazi jednaki. Njegov izlaz je obrnuti XOR. Koristi se u digitalnim komparatorima i sistemima za detekciju jednakosti.
+        Primjena uključuje situacije kada je potrebno provjeriti identičnost ulaznih vrijednosti u digitalnim uređajima.
+      </p>
+
+      <table>
+        <tr><th>A</th><th>B</th><th>Y = A ⊙ B</th></tr>
+        <tr><td>0</td><td>0</td><td>1</td></tr>
+        <tr><td>0</td><td>1</td><td>0</td></tr>
+        <tr><td>1</td><td>0</td><td>0</td></tr>
+        <tr><td>1</td><td>1</td><td>1</td></tr>
+      </table>
+
+      <div class="img-container">
+        <img src="img/logicka-kola/xnor.png">
+      </div>
+
+      <h2 id="zakljucak">Zaključak</h2>
+      <p>
+        Logička kola su temelj digitalne elektronike. Kombinovanjem osnovnih logičkih funkcija moguće
+        je izgraditi složene digitalne sisteme poput računara. Razumijevanje njihovog rada je prvi korak
+        ka projektovanju i analizi digitalnih sklopova. Poznavanje tabela istinitosti i funkcija logičkih kola omogućava 
+        kreiranje preciznih digitalnih sistema i optimizaciju elektronskih uređaja u praksi.
+      </p>
+
+    </main>
+  </div>
+
+  <footer>
+    <p>
+      &copy; 2025 - ShortCircuit Electronics | <a href="#">Nazad na vrh</a>
+    </p>
+  </footer>
+</body>
+</html>

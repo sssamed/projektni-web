@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Operacioni pojačavači</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/x-icon" href="/img/icons/favicon.ico">
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html">
+      <img class="logo-mobile" src="img/logo-mobile.png" alt="logo">
+      <img class="logo-desktop" src="img/logo-desktop.png" alt="logo">
+    </a>
+    <nav>
+      <a href="dioda.html">Dioda</a>
+      <a href="otpornik.html">Otpornik</a>
+      <a href="logicka-kola.html">Logička kola</a>
+    </nav>
+  </header>
+
+  <div class="layout">
+
+    <input type="checkbox" id="sidebar-toggle">
+    <aside class="sidebar">
+      <a href="#osnovna">Osnovna funkcija</a>
+      <a href="#idealno">Idealno i realno</a>
+      <a href="#invert">Invertujući pojačavač</a>
+      <a href="#noninvert">Neinvertujući pojačavač</a>
+      <a href="#follower">Sljednik napona</a>
+      <a href="#adder">Sabirač (sumator)</a>
+      <a href="#dif">Diferencijalni pojačavač</a>
+      <a href="#integrator">Integrator</a>
+      <a href="#diferencijator">Diferencijator</a>
+      <a href="#zakljucak">Zaključak</a>
+    </aside>
+
+    <label for="sidebar-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+    <main>
+      <h1>Operacioni pojačavač (OpAmp)</h1>
+
+      <h2 id="osnovna">Osnovna funkcija</h2>
+      <p>
+        <strong>Operacioni pojačavač (OpAmp)</strong> je analogna komponenta koja ima dva ulaza:
+        <em>invertujući</em> (−) i <em>neinvertujući</em> (+), te jedan izlaz. 
+        Operacioni pojačavač je da pojača razliku napona između ulaza i isporuči signal na izlaz, pri čemu povratna veza (feedback) određuje stvarno ponašanje i faktor pojačanja.
+      </p>
+
+      <div class="img-container">
+        <img src="img/opamp/opamp.png">
+      </div>
+
+      <h2 id="idealno">Idealni i realni pojačavač</h2>
+      <p>
+        U <strong>idealnom</strong> OpAmp-u važi:
+      </p>
+
+      <ul>
+        <li>Beskonačno pojačanje napona (A → ∞)</li>
+        <li>Beskonačno veliki ulazni otpor</li>
+        <li>Nula izlazni otpor</li>
+        <li>Ulazna struja = 0</li>
+        <li>Razlika napona na ulazima = 0 (zbog povratne sprege)</li>
+      </ul>
+
+      <p>
+        U <strong>realnom</strong> OpAmp-u ove vrijednosti su velike ili male, ali ne beskonačne.
+        Ipak, u većini sklopova možemo tretirati OpAmp kao idealan jer greške nisu značajne.
+      </p>
+
+      <div class="img-container">
+        <img src="img/opamp/real_ideal.png">
+      </div>
+
+
+      <h2 id="invert">Invertujući pojačavač</h2>
+      <p>
+        Kod invertujuće konfiguracije signal se dovodi na (−) ulaz, dok se (+) ulaz uzemljuje ili postavlja na referentni napon.
+        Izlaz je fazno invertovan (obrnut).
+      </p>
+
+      <div class="img-container">
+        <img src="img/opamp/inverting_amp.png" alt="inverting-opamp">
+      </div>
+
+      <p>
+        Faktor pojačanja dat je odnosom otpornika:
+      </p>
+
+      <div class="formula">
+        A = - <span class="fraction">
+          <span class="numerator">R<sub>2</sub></span>
+          <span class="denominator">R<sub>1</sub></span>
+        </span>
+      </div>
+
+
+      <h2 id="noninvert">Neinvertujući pojačavač</h2>
+      <p>
+        Ulazni signal dovodi se na (+) ulaz, dok se povratna veza vodi na (−).
+        Izlaz je iste faze kao ulaz.
+      </p>
+
+      <div class="img-container">
+        <img src="img/opamp/noninverting_amp.png" alt="noninverting-opamp">
+      </div>
+
+      <div class="formula">
+        A = 1 + <span class="fraction">
+          <span class="numerator">R<sub>2</sub></span>
+          <span class="denominator">R<sub>1</sub></span>
+        </span>
+      </div>
+
+
+      <h2 id="follower">Naponsko sljedilo (Buffer, Voltage follower)</h2>
+      <p>
+        Kod sljedila, izlaz je spojen direktno na (−) ulaz. Pojačanje je 1 ali ulazna impedansa ogromna → dobro za izolaciju signala.
+      </p>
+
+      <div class="img-container">
+        <img src="img/opamp/buffer.png" alt="buffer">
+      </div>
+
+
+      <h2 id="adder">Sabirac (Sumator)</h2>
+      <p>
+        Više signala možemo sabirati pomoću povratne sprege.
+      </p>
+
+      <div class="img-container">
+        <img src="img/opamp/adder.png" alt="adder">
+      </div>
+
+      <div class="formula">
+        U<sub>izl</sub> = - ( 
+          <span class="fraction">
+            <span class="numerator">U<sub>1</sub> · R<sub></span>
+            <span class="denominator">R<sub>1</sub></span></span> 
+          + 
+          <span class="fraction">
+            <span class="numerator">U<sub>2</sub> · R</span>
+            <span class="denominator">R<sub>2</sub></span>
+          </span> + ... + 
+          <span class="fraction">
+            <span class="numerator">U<sub>n</sub> · R</span>
+            <span class="denominator">R<sub>n</sub></span>
+          </span> )
+      </div>
+
+
+      <h2 id="dif">Diferencijalni pojačavač</h2>
+      <p>
+        Pojačava razliku dva signala → najvažniji blok za senzore i mjerne pretpojačivače.
+      </p>
+
+      <div class="img-container">
+        <img src="img/opamp/subtractor.png" alt="subtractor">
+      </div>
+
+
+      <h2 id="integrator">Integrator</h2>
+
+      <div class="img-container">
+        <img src="img/opamp/integrator.png">
+      </div>
+
+      <div class="formula">
+        U<sub>izl</sub> = - ( 
+          <span class="fraction"> 
+            <span class="numerator">1</span>
+            <span class="denominator">R</span>
+          </span> · C ) 
+          <span style="font-size: 1.3em">&#8747;</span>U<sub>ul</sub> dt
+      </div>
+
+
+      <h2 id="diferencijator">Diferencijator</h2>
+
+      <div class="img-container">
+        <img src="img/opamp/differentiator.png">
+      </div>
+
+      <div class="formula">
+        U<sub>izl</sub> = - R · C · <span class="fraction"><span class="numerator">dU<sub>ul</sub></span><span class="denominator">dt</span></span>
+      </div>
+
+
+      <h2 id="zakljucak">Zaključak</h2>
+      <p>
+        Operacioni pojačavači su univerzalni gradivni blokovi analogne elektronike. 
+        Sa samo nekoliko otpornika i kondenzatora možemo realizirati pojačanje, sumiranje, filtriranje, mjerenje i obradu signala.
+        Razumijevanje rada povratne sprege je ključ za pravilno korištenje OpAmp-a u praksi.
+      </p>
+
+    </main>
+  </div>
+
+  <footer>
+    <p>
+      &copy; 2025 - ShortCircuit Electronics | <a href="#">Nazad na vrh</a>
+    </p>
+  </footer>
+
+</body>
+</html>

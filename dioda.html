@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="bs">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Diode</title>
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" type="image/x-icon" href="/img/icons/favicon.ico">
+</head>
+
+<body>
+
+  <header>
+    <a href="index.html">
+      <img class="logo-mobile" src="img/logo-mobile.png" alt="logo">
+      <img class="logo-desktop" src="img/logo-desktop.png" alt="logo">
+    </a>
+    <nav>
+      <a href="otpornik.html">Otpornik</a>
+      <a href="opamp.html">OpAmp</a>
+      <a href="logicka-kola.html">Logička kola</a>
+    </nav>
+  </header>
+
+  <div class="layout">
+
+     <input type="checkbox" id="sidebar-toggle">
+    <aside class="sidebar">
+      <a href="#osnovna">Osnovna funkcija</a>
+      <a href="#struktura">Struktura i rad</a>
+      <a href="#karakteristike">Karakteristike</a>
+      <a href="#vrste">Vrste dioda</a>
+      <a href="#led">LED diode</a>
+      <a href="#zener">Zener diode</a>
+      <a href="#schottky">Schottky-eve diode</a>
+      <a href="#fotodioda">Fotodiode</a>
+      <a href="#primjene">Primjene</a>
+      <a href="#model">Matematički model</a>
+      <a href="#eksperiment">Eksperimentalna karakteristika</a>
+      <a href="#zakljucak">Zaključak</a>
+    </aside>
+
+    <label for="sidebar-toggle" class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </label>
+
+
+    <main>
+      <h1>Diode</h1>
+
+      <h2 id="osnovna">Osnovna funkcija</h2>
+      <p>
+          <strong>Dioda</strong> je poluprovodnička komponenta koja omogućava protok električne struje samo u jednom smjeru, blokirajući protok u suprotnom smjeru. 
+          To svojstvo čini diode nezamjenjivim elementom u ispravljačkim krugovima, zaštiti elektroničkih sklopova od obrnutog polariteta i u regulaciji napona. 
+          Osnovna funkcija diode temelji se na PN spoju, gdje P-tipski poluprovodnik sadrži višak šupljina, a N-tipski višak slobodnih elektrona. 
+          Kada se spoji u direktnu polarizaciju, elektroni i šupljine prelaze preko spoja i omogućuju protok struje, dok u obrnutom smjeru protok gotovo ne postoji zbog električnog polja u osiromašenom području. 
+          Različite vrste dioda, kao što su LED diode, Zener diode, Schottky diode i fotodiode, koriste ovo osnovno svojstvo, ali svaka ima specifičnu funkciju i primjenu u elektroničkim sistemima.
+      </p>
+
+
+      <div class="img-container">
+        <img src="img/dioda/simbol-diode.png">
+      </div>
+
+      <h2 id="struktura">Struktura i rad</h2>
+      <p>
+          Dioda je poluprovodnički element koji se sastoji od spoja dvaju tipova poluprovodnika: <strong>P-tipa</strong> i <strong>N-tipa</strong>. 
+          P-tip poluprovodnika sadrži višak "šupljina" (pozitivno nabijeni nosači), dok N-tip poluprovodnika ima višak slobodnih elektrona (negativno nabijeni nosači). 
+          Spoj P i N formira tzv. <strong>PN spoj</strong>, ključnu strukturu svih dioda, uključujući LED diode.
+      </p>
+
+      <p>
+          Na spoju se stvara tzv. <strong>osiromašeno područje</strong> (engl. depletion region), gdje su slobodni nosioci naboja neutralizirani. Ovo područje djeluje kao prirodna barijera koja sprječava protok struje u obrnutom smjeru. 
+          Kada se na diodu primijeni direktna polarizacija (anoda pozitivna, katoda negativna), elektroni iz N-područja prelaze u P-područje i rekombiniraju se sa šupljinama, oslobađajući energiju. Kod običnih dioda energija se uglavnom pretvara u toplinu, dok kod LED dioda oslobođena energija dolazi u obliku fotona svjetlosti.
+      </p>
+
+      <p>
+          Poluprovodnici koji se koriste u diodama mogu biti silicijum, germanijum, ili specijalni spojevi za LED diode (GaAs, GaP, GaN). Silicijum je najčešće korišten zbog stabilnosti, jednostavnosti proizvodnje i niske osjetljivosti na temperaturu, dok LED materijali imaju veći <strong>energetski jaz</strong> (engl. band gap) koji omogućava emisiju vidljive svjetlosti.
+      </p>
+
+      <p>
+          Princip rada može se objasniti kroz pojmove <strong>valentnog pojasa</strong> i <strong>provodnog pojasa</strong>. Elektroni u valentnom pojasu su vezani za atome i ne provode struju, dok elektroni u provodnom pojasu mogu slobodno kretati kroz kristalnu strukturu. Kada elektron prijeđe s provodnog u valentni pojas, oslobađa se energija. Kod LED dioda, ta energija se oslobađa u obliku fotona, čime nastaje svjetlost čija boja zavisi od širine energetskog jaza.
+      </p>
+
+      <p>
+          Kada se dioda spoji u direktnu polarizaciju, napon izvora nadmašuje prirodnu barijeru osiromašenog područja i omogućava tok struje. 
+          Nositelji naboja ulaze u osiromašenu zonu i rekombiniraju se, čime omogućuju kontinuiranu provodljivost. 
+          Kod LED dioda proces rekombinacije je dizajniran tako da energija oslobođena rekombinacijom proizvodi svjetlost, dok kod običnih dioda energija uglavnom prelazi u toplinu.
+      </p>
+
+      <p>
+          Kod obrnutog polariteta, barijera u osiromašenom području se povećava, oslobađanje nosilaca smanjuje, i struja kroz diodu gotovo da ne teče, osim male tzv. inverzne struje. 
+          Zener diode su posebne jer u obrnutom smjeru mogu provoditi struju kad napon dostigne vrijednost proboja, dok fotodiode koriste vanjski izvor svjetlosti da generiraju struju.
+      </p>
+
+      <p>
+          LED diode dodatno koriste poluprovodničke spojeve poput GaN ili GaP kako bi povećale energiju oslobođenu rekombinacijom i proizvele svjetlost željene boje. 
+          Ove diode su dizajnirane tako da imaju visoku efikasnost, minimalni gubitak energije i maksimalan intenzitet svjetlosti pri malim strujama.
+      </p>
+
+      <div class="img-container">
+        <img src="img/dioda/diode-construction.png" alt="diode-construction">
+        <img src="img/dioda/led-construction.png" alt="diode-construction">
+      </div>
+
+      <p>
+          Ukratko, dioda funkcioniše zahvaljujući kontroli kretanja nosača naboja kroz PN spoj i osiromašeno područje, a razlika između obične diode i LED diode je u tome što LED oslobađa energiju u obliku fotona svjetlosti. 
+          Razumijevanje poluprovodničke fizike, energetskog pojasa i rekombinacije nosioca je ključno za razumijevanje rada svih vrsta dioda.
+      </p>
+
+
+      <div class="formula">U<sub>D</sub> ≈ 0.7 V (Si), 0.3 V (Ge)</div>
+
+      <h2 id="karakteristike">Karakteristike diode</h2>
+      <ul>
+        <li>Napon proboja (U<sub>BR</sub>)</li>
+        <li>Struja zasićenja (I<sub>s</sub>)</li>
+        <li>Pad napona u vodljivom režimu (U<sub>D</sub>)</li>
+      </ul>
+
+      <div class="note">
+        Napomena: Dioda nije idealna, uvijek postoji određeno curenje struje.
+      </div>
+
+      <h2 id="vrste">Vrste dioda</h2>
+      <table>
+        <tr>
+          <th>Vrsta diode</th>
+          <th>Opis</th>
+          <th>Primjena</th>
+        </tr>
+        <tr>
+          <td>LED</td>
+          <td>Emituje svjetlost pri provodu struje</td>
+          <td>Indikatori, rasvjeta</td>
+        </tr>
+        <tr>
+          <td>Zener dioda</td>
+          <td>Radi u proboju i održava konstantan napon</td>
+          <td>Stabilizatori napona</td>
+        </tr>
+        <tr>
+          <td>Schottky</td>
+          <td>Mali pad napona i brza reakcija</td>
+          <td>Brza ispravljanja, logički krugovi</td>
+        </tr>
+        <tr>
+          <td>Fotodioda</td>
+          <td>Generiše struju pod svjetlom</td>
+          <td>Senzori i detekcija</td>
+        </tr>
+        <tr>
+          <td>Tunnel dioda</td>
+          <td>Negativni diferencijalni otpor</td>
+          <td>Oscilatori, HF elektronika</td>
+        </tr>
+      </table>
+
+      <div class="img-container">
+        ;<img src="img/dioda/various-diodes.png" alt="vrste-dioda">
+      </div>
+
+      <div class="extra-info">
+        <h3 id="led">LED diode</h3>
+        <p>
+            <strong>LED (Light Emitting Diode)</strong> je posebna vrsta diode koja pri protoku struje emituje svjetlost. 
+            Osnovni princip rada LED diode zasniva se na rekombinaciji elektrona i šupljina u poluprovodničkom spoju. 
+            Kada elektron iz N-područja pređe u P-područje, popunjava šupljinu i oslobađa energiju u obliku fotona (svjetlosti). 
+            Boja svjetlosti zavisi od energije tog prelaza, odnosno od upotrebljenog poluprovodničkog materijala.
+        </p>
+
+        <p>
+            LED diode se najčešće izrađuju od:
+        </p>
+        <ul>
+            <li>GaAs (Galijum Arseniid) – infracrvene LED</li>
+            <li>GaP (Galijum Fosfid) – crvene i zelene LED</li>
+            <li>GaN (Galijum Nitrid) – plave i bijele LED</li>
+            <li>AlGaInP (Aluminijum-Galijum-Indijum Fosfid) – narandžaste LED</li>
+        </ul>
+
+        <h4>Karakteristike LED dioda</h4>
+        <ul>
+            <li>Rade pri <strong>malim strujama</strong> (5–20 mA tipično).</li>
+            <li>Nema veliki pad napona kao obične diode – pad napona zavisi od boje.</li>
+            <li>Uvijek se spajaju <strong>sa serijskim otpornikom</strong> kako bi se ograničila struja.</li>
+            <li>Efikasnost i intenzitet svjetlosti zavise od struje i materijala.</li>
+        </ul>
+
+        <table>
+            <tr>
+                <th>Boja LED</th>
+                <th>Tipičan pad napona (U<sub>D</sub>)</th>
+            </tr>
+            <tr><td>Crvena</td><td>1.6 – 2.0 V</td></tr>
+            <tr><td>Žuta</td><td>1.8 – 2.2 V</td></tr>
+            <tr><td>Zelena</td><td>2.0 – 3.0 V</td></tr>
+            <tr><td>Plava</td><td>2.8 – 3.6 V</td></tr>
+            <tr><td>Bijela i UV</td><td>3.0 – 4.0 V</td></tr>
+        </table>
+
+        <h4>Povezivanje LED diode</h4>
+        <p>LED dioda se <strong>uvijek</strong> spaja u seriju sa otpornikom kako bi se ograničila struja:</p>
+        <div class="formula">
+            R = <span class="fraction">
+                  <span class="numerator">U<sub>CC</sub> - U<sub>D</sub></span>
+                  <span class="denominator">I</span>
+                </span>
+        </div>
+        <p>Na primjer: ako napajamo crvenu LED na 5V izvor i želimo 10 mA struje:</p>
+        <div class="formula">
+            R = <span class="fraction">
+              <span class="numerator">(5V - 1.8V)</span>
+              <span class="denominator">0.01A</span>
+            </span> ≈ 320 Ω → uzima se najbliži standardni 330 Ω
+        </div>
+        <div class="img-container">
+          <img src="img/dioda/led-circuit.png">
+        </div>
+
+        <h4>Dužina nogica</h4>
+        <ul>
+            <li><strong>Duža nogica</strong> = Anoda (+)</li>
+            <li><strong>Kraća nogica</strong> = Katoda (–)</li>
+        </ul>
+
+        <h4>Primjene LED dioda</h4>
+        <ul>
+            <li>Indikacione lampice</li>
+            <li>Semafori i displeji</li>
+            <li>Rasvjeta (LED sijalice, automobilska rasvjeta)</li>
+            <li>Optičke komunikacije</li>
+        </ul>
+
+        <h3 id="zener">Zener diode</h3>
+        <p>
+            Zener dioda je posebno projektovana da radi u obrnutom smjeru (inverzna polarizacija). 
+            Kada se dostigne određeni napon nazvan <strong>napon proboja (U<sub>Z</sub>)</strong>, dioda počinje provoditi struju i održava konstantan napon. 
+            Zener diode se često koriste za stabilizaciju napona u napajanjima. Njihov rad zasniva se na kontrolisanoj rekombinaciji nosača naboja unutar P-N spoja pri visokom inverznom naponu.
+        </p>
+
+        <h3 id="schottky">Schottky diode</h3>
+        <p>
+            Schottky diode su diode sa metal-poluprovodničkim kontaktom, što im daje <strong>mali pad napona</strong> u vodljivom režimu (0.2–0.4 V) i brzi odziv. 
+            Koriste se u visokofrekventnim ispravljačima, logičkim sklopovima i za efikasno ispravljanje struje. 
+            Njihova brzina rada omogućava minimalno kašnjenje i manje gubitke energije u visoko-frekventnim aplikacijama.
+        </p>
+
+        <h3 id="fotodioda">Fotodiode</h3>
+        <p>
+            Fotodioda je poluprovodnički senzor svjetlosti koji generira električnu struju kada je osvijetljena. 
+            Osnovna struktura je slična običnom P-N spoju, ali ima poseban dizajn kontakata da bi svjetlost mogla doprijeti do osiromašenog područja. 
+            Fotodioda može raditi u dva režima:
+        </p>
+
+        <h4>Fotodioda kao fotogenerator</h4>
+        <p>
+            Kada fotoni svjetlosti padnu na P-N spoj, generišu parove elektron-šupljina. 
+            Ova struja može napajati vanjski krug bez dodatnog izvora napona. 
+            Naziva se fotogenerator jer fotodioda sama proizvodi električnu energiju pod svjetlom.
+        </p>
+
+        <h4>Fotodioda kao detektor svjetlosti</h4>
+        <p>
+            Fotodioda se može inverzno polarizirati i spojiti na vanjski izvor. 
+            Kada nije osvijetljena teče mala <em>tamna struja</em>. 
+            Pod svjetlom, koncentracija nosača naboja raste i struja proporcionalno svjetlosnom toku povećava. 
+            Brzina odziva i osjetljivost zavise od talasne dužine svjetlosti. 
+            PIN fotodiode imaju dodatni intrinzični sloj između P i N regije, što povećava brzinu odziva i efikasnost.
+        </p>
+
+        <ul>
+            <li>Vrste fotodiode: PN fotodioda, PIN fotodioda, lavinska fotodioda</li>
+            <li>Brz odziv i linearna karakteristika struje prema svjetlosnom toku</li>
+            <li>Koriste se u senzorima, optičkim komunikacijama, solarnoj energiji</li>
+        </ul>
+    </div>
+
+
+
+      <h2 id="primjene">Primjene</h2>
+      <ul>
+        <li>Ispravljanje AC → DC</li>
+        <li>Zaštita od obrnutog polariteta</li>
+        <li>Detekcija signala</li>
+        <li>LED indikatori</li>
+      </ul>
+
+      <div class="img-container">
+        <a href="https://en.wikipedia.org/wiki/Diode_bridge">
+          <img src="img/dioda/diode_bridge.png">
+        </a>
+      </div>
+
+      <h2 id="model">Matematički model</h2>
+      <div class="formula">I = I<sub>s</sub> (e<sup><span class=fraction>
+        <span class="numerator">U<sub>D</sub></span>
+        <span class="denominator">(n·U<sub>T</sub>)</span></span></sup> - 1)</div>
+
+      <h2 id="eksperiment">Eksperimentalna karakteristika</h2>
+      <div class="img-container">
+        <img src="img/dioda/iv.png" alt="iv-analysis">
+      </div>
+
+      <h2 id="zakljucak">Zaključak</h2>
+      <p>
+          <strong>Dioda</strong> je osnovni, ali ključni element modernih elektroničkih sistema i uređaja. 
+          Njena sposobnost da usmjeri električnu struju u jednom smjeru, dok blokira protok u suprotnom, omogućava stabilnost i sigurnost električnih krugova. 
+          LED diode omogućavaju efikasno osvjetljenje i optičku komunikaciju, Zener diode stabilizuju napone, Schottky diode omogućavaju brze odzive i male gubitke energije, dok fotodiode pretvaraju svjetlost u električnu energiju. 
+          Razumijevanje strukture, principa rada i svojstava različitih tipova dioda ključno je za projektiranje i analizu elektroničkih sklopova, a njihova primjena proteže se od jednostavnih indikatora do složenih digitalnih i energetski efikasnih sistema.
+      </p>
+
+    </main>
+  </div>
+
+  <footer>
+    <p>
+      &copy; 2025 - ShortCircuit Electronics | <a href="#">Nazad na vrh</a>
+    </p>
+  </footer>
+
+</body>
+</html>
