@@ -1,3 +1,4 @@
+
 .landing-main {
   padding: 2rem;
   text-align: center;
@@ -61,7 +62,7 @@
 .card:hover, .card:active {
   transform: translateY(-8px);
   box-shadow: 0 12px 25px rgba(0, 200, 150, 0.4);
-  background: rgba(42, 42, 61, 0.95);
+  background: var(--card-bg);
 }
 
 .features-section {

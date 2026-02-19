@@ -20,6 +20,10 @@
       <a href="opamp.html">OpAmp</a>
       <a href="logicka-kola.html">Logička kola</a>
     </nav>
+
+    <div class="theme-switch-wrapper">
+      <img id="theme-icon-btn" src="img/icons/light_mode_icon.svg">
+    </div>
   </header>
 
   <div class="layout">
@@ -220,6 +224,32 @@
           <img src="img/dioda/led-circuit.png">
         </div>
 
+        <section class="calculator-card">
+            <h3>Kalkulator za predotpor LED diode</h3>
+            <div class="calc-grid">
+                <div class="input-group">
+                    <label>Napon izvora (V): </label>
+                    <input type="number" id="v-source" class="dynamic" value="5" min="1" max="999999">
+                </div>
+                <div class="input-group">
+                    <label>Boja LED diode (Napon U<sub>D</sub>): </label>
+                    <select id="led-v">
+                        <option value="1.8">Crvena (1.8V)</option>
+                        <option value="2.1">Žuta/Zelena (2.1V)</option>
+                        <option value="3.3">Plava/Bijela (3.3V)</option>
+                    </select>
+                </div>
+                <div class="input-group">
+                    <label>Tražena struja (mA): </label>
+                    <input type="number" id="i-led" class="dynamic" value="20" min="1" max="999999">
+                </div>
+            </div>
+            <div class="calc-result">
+                <span>Izračunati otpor:</span>
+                <strong><span id="r-result"> 160 Ω </span></strong>
+            </div>
+        </section>
+
         <h4>Dužina nogica</h4>
         <ul>
             <li><strong>Duža nogica</strong> = Anoda (+)</li>
@@ -320,6 +350,9 @@
       &copy; 2025 - ShortCircuit Electronics | <a href="#">Nazad na vrh</a>
     </p>
   </footer>
+
+  <script src="js/script.js"></script>
+  <script src="js/dioda.js"></script>
 
 </body>
 </html>
